@@ -35,6 +35,6 @@ public class DiscountBill extends GroceryBill {
 
     public double getDiscountPercent() {
         if (!regularCustomer || super.getTotal() == 0) return 0.0;
-        return 100 - ((getTotal() * 100) / super.getTotal());
+        return Math.round((100 - ((getTotal() * 100) / super.getTotal())) * 1e13) / 1e13;
     }
 }

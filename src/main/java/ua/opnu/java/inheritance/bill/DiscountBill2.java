@@ -34,7 +34,7 @@ public class DiscountBill2 {
 
     public double getDiscountPercent() {
         if (!regularCustomer || bill.getTotal() == 0) return 0.0;
-        return 100 - ((getTotal() * 100) / bill.getTotal());
+        return Math.round((100 - ((getTotal() * 100) / bill.getTotal())) * 1e13) / 1e13;
     }
 
     public Employee getClerk() {
