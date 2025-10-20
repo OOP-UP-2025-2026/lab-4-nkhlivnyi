@@ -1,4 +1,4 @@
-import ua.opnu.java.inheritance.point.Point;
+package ua.opnu.java.inheritance.point;
 
 public class Point3D extends Point {
     private int z;
@@ -29,20 +29,15 @@ public class Point3D extends Point {
     }
 
     public double distance(Point3D p) {
-        long dx = (long) getX() - p.getX();
-        long dy = (long) getY() - p.getY();
-        long dz = (long) z - p.z;
-        double d = Math.sqrt(dx * dx + dy * dy + dz * dz);
-        return Math.round(d * 1e13) / 1e13;
+        int dx = getX() - p.getX();
+        int dy = getY() - p.getY();
+        int dz = z - p.z;
+        return Math.sqrt(dx * dx + dy * dy + dz * dz);
     }
 
     @Override
     public double distanceFromOrigin() {
-        long dx = (long) getX();
-        long dy = (long) getY();
-        long dz = (long) z;
-        double d = Math.sqrt(dx * dx + dy * dy + dz * dz);
-        return Math.round(d * 1e13) / 1e13;
+        return Math.sqrt(getX() * getX() + getY() * getY() + z * z);
     }
 
     @Override
