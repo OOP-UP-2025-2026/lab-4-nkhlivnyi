@@ -32,7 +32,8 @@ public class Point3D extends Point {
         long dx = (long) getX() - p.getX();
         long dy = (long) getY() - p.getY();
         long dz = (long) z - p.z;
-        return Math.sqrt(dx * dx + dy * dy + dz * dz);
+        double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        return Math.round(dist * 1_000_000_000_0d) / 1_000_000_000_0d;
     }
 
     @Override
@@ -40,7 +41,8 @@ public class Point3D extends Point {
         long dx = (long) getX();
         long dy = (long) getY();
         long dz = (long) z;
-        return Math.sqrt(dx * dx + dy * dy + dz * dz);
+        double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        return Math.round(dist * 1_000_000_000_0d) / 1_000_000_000_0d;
     }
 
     @Override
